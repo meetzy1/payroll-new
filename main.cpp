@@ -3,9 +3,6 @@
 #include "EmployeeList.h"
 using namespace std;
 
-
-
-
 //to run g++ -o output main.cpp
 // >./output
 
@@ -21,10 +18,11 @@ void addNewEmployees(EmployeeList&){
 
 void modifyEmployeeData(EmployeeList&){
     int employee_id;
+    int searchedEmp;
     cout << "Enter employee's current id: " ;
     cin >> employee_id;
     searchedEmp = EmployeeList.searchEmployee(employee_id);
-    if(searchEmp != -1){
+    if(searchedEmp != -1){
         cout << "This employee has following data:" << endl;
         cout << EmployeeList.employee_list[searchedEmp]; //setup << operator to print proper details
         EmployeeList.modifyEmployeeData(searchedEmp);
