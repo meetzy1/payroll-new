@@ -2,14 +2,6 @@
 // Created by DivYesh Patel on 2019-04-08.
 //
 
-#ifndef PAYROLL_NEW_EMPLOYEE_H
-#define PAYROLL_NEW_EMPLOYEE_H
-
-#endif //PAYROLL_NEW_EMPLOYEE_H
-
-#include <iostream>
-using namespace std;
-
 class Employee{
 
 private:
@@ -90,9 +82,9 @@ public:
     }
 
     //overloading >>
-    friend istream& operator>> (istream &in, Employee &myemp){
-        //extract employee info here
-    }
+//    friend istream& operator>> (istream &in, Employee &myemp){
+//        //extract employee info here
+//    }
 
     //overloading <<
     friend ostream& operator<< (ostream& out, Employee myemp){

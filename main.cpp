@@ -1,7 +1,8 @@
 #include<iostream>
+using namespace std;
 #include "Employee.h"
 #include "EmployeeList.h"
-using namespace std;
+
 
 //to run g++ -o output main.cpp
 // >./output
@@ -68,7 +69,7 @@ int main(){
     cout << "Create the employee database:" << endl;
 
     addNewEmployees(empList);
-    cout << "The employee database has been created." ;
+    cout << "The employee database has been created." << endl;
 
     main_execution:
     printMenu();

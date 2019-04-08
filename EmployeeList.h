@@ -2,13 +2,6 @@
 // Created by DivYesh Patel on 2019-04-08.
 //
 
-#ifndef PAYROLL_NEW_EMPLOYEELIST_H
-#define PAYROLL_NEW_EMPLOYEELIST_H
-
-#endif //PAYROLL_NEW_EMPLOYEELIST_H
-
-#include "Employee.h"
-
 class EmployeeList{
 
 public:
@@ -69,38 +62,49 @@ public:
     };
 
     void modifyEmployeeData(int index){
+        int id;
+        string fname;
+        string lname;
+        float rate;
+        float hours;
+
         //should modify employee_list[index]'s object values
         cout << "Change id? y/n -->" ;
         cin >> answer;
         if(answer == 'y'){
             cout << "Enter new ID: " ;
-            employee_list[index].setId(cin); //need to confirm wether this is valid
+            cin >> id;
+            employee_list[index].setId(id);
         }
 
         cout << "Change first name? y/n -->" ;
         cin >> answer;
         if(answer == 'y'){
             cout << "Enter new first name: " ;
-            employee_list[index].setFirstName(cin);
+            cin >> fname;
+            employee_list[index].setFirstName(fname);
         }
 
         cout << "Change last name? y/n -->" ;
         cin >> answer;
         if(answer == 'y'){
             cout << "Enter new last name: " ;
-            employee_list[index].setLastName(cin);
+            cin >> lname;
+            employee_list[index].setLastName(lname);
         }
         cout << "Change reate? y/n -->" ;
         cin >> answer;
         if(answer == 'y'){
             cout << "Enter new rate: " ;
-            employee_list[index].setRate(cin);
+            cin >> rate;
+            employee_list[index].setRate(rate);
         }
         cout << "Change hours worked? y/n -->" ;
         cin >> answer;
         if(answer == 'y'){
             cout << "Enter new hours: " ;
-            employee_list[index].setHours(cin);
+            cin >> hours;
+            employee_list[index].setHours(hours);
         }
     };
 
