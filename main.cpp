@@ -50,7 +50,7 @@ void displayEmployeeData(const EmployeeList empList){
     };
 };
 
-void printMenu(){
+void printMenu() {
     cout << "******************************************************************************" << endl;
     cout << "**                                   Menu                                   **" << endl;
     cout << "** 1. Add new employees to the database.                                    **" << endl;
@@ -58,12 +58,11 @@ void printMenu(){
     cout << "** 3. Delete employees from the database.                                   **" << endl;
     cout << "** 4. Display employee data to the screen.                                  **" << endl;
     cout << "** 5. Quit the system                                                       **" << endl;
-    cout << "******************************************************************************";
-};
+    cout << "******************************************************************************" << endl;
+}
 
 
 int main(){
-    char response;
     int ch; // for menu choices
     EmployeeList empList;
     cout << "Create the employee database:" << endl;
