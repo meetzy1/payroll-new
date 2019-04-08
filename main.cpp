@@ -16,16 +16,16 @@ void addNewEmployees(EmployeeList&){
     }while(response != 'n');
 };
 
-void modifyEmployeeData(EmployeeList&){
+void modifyEmployeeData(EmployeeList empList){
     int employee_id;
     int searchedEmp;
     cout << "Enter employee's current id: " ;
     cin >> employee_id;
-    searchedEmp = EmployeeList.searchEmployee(employee_id);
+    searchedEmp = empList.searchEmployee(employee_id);
     if(searchedEmp != -1){
         cout << "This employee has following data:" << endl;
-        cout << EmployeeList.employee_list[searchedEmp]; //setup << operator to print proper details
-        EmployeeList.modifyEmployeeData(searchedEmp);
+        cout << empList.employee_list[searchedEmp]; //setup << operator to print proper details
+        empList.modifyEmployeeData(searchedEmp);
     }
     else{
         cout << "No such employee in the database." << endl;
@@ -40,12 +40,12 @@ void deleteEmployees(EmployeeList&){
     //else cout << "No such employee."
 };
 
-void displayEmployeeData(const EmployeeList&){
+void displayEmployeeData(const EmployeeList empList){
     int count = 0;
     cout << "XXX Company Payroll System" << endl;
     cout << "ID \t First Name \t Last Name \t Rate \t Hours \t Wage" << endl;
-    for (count = 0; count < EmployeeList.no_of_employee_objects_in_list; count++){
-        cout << EmployeeList.employee_list[count] //modify to print proper data
+    for (count = 0; count < empList.no_of_employee_objects_in_list; count++){
+        cout << empList.employee_list[count];//modify to print proper data
     };
 };
 
