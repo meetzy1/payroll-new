@@ -25,6 +25,7 @@ public:
                 return false;
             }
         }
+        return 0;
     };
 
     bool deleteEmployee(Employee emp){
@@ -42,6 +43,7 @@ public:
         else{
             return false; // no employees are there
         }
+        return false;
     };
 
     int searchEmployee(int id){
@@ -59,6 +61,7 @@ public:
             cout << "No Employees in list" << endl;
             return -1;
         }
+        return 0;
     };
 
     void modifyEmployeeData(int index){
@@ -109,11 +112,11 @@ public:
     };
 
     int return_total_employee_in_list(){
-        return no_of_employee_objects_in_list;
+        return this->no_of_employee_objects_in_list;
     };
 
     Employee returnEmp(int index){
-        return employee_list[index];
+        return this->employee_list[index];
     };
 
 };
