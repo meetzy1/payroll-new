@@ -3,4 +3,4 @@ project(payroll_new)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(payroll_new main.cpp)
+add_executable(payroll_new main.cpp Employee.h EmployeeList.h)
