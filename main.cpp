@@ -79,23 +79,19 @@ int main(){
         case 1:
             addNewEmployees(empList); //we have to pass employeelist object
             goto main_execution;
-            break;
         case 2:
             modifyEmployeeData(empList);
             goto  main_execution;
-            break;
         case 3:
             deleteEmployees(empList);
             goto main_execution;
-            break;
         case 4:
             displayEmployeeData(empList);
             goto main_execution;
-            break;
         case 5:
             cout << "Thanks for using XXXX Company Payroll System! All employee information can be viewed in the file “employee_list.dat”" << endl;
             //update employee_list.dat file with empList data
-            exit();
+            return 0;
         default:
             cout << "wrong choice!" << endl;
             break;
