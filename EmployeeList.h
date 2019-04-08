@@ -12,7 +12,7 @@ public:
     int no_of_employee_objects_in_list = 0;
 
     EmployeeList(){
-        cout << "EmployeeList default Constructor" << endl;
+//        cout << "EmployeeList default Constructor" << endl;
     };
 
     bool addEmployee(Employee emp){

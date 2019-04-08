@@ -28,6 +28,16 @@ void addNewEmployees(EmployeeList empList){
         cout << "Another employee? y/n -->" ;
         cin >> response;
         cin.clear();
+
+        // Although parameterized constructor can be used
+        Employee myemp;
+        myemp.setId(id);
+        myemp.setFirstName(fname);
+        myemp.setLastName(lname);
+        myemp.setRate(rate);
+        myemp.setHours(hour);
+
+        empList.addEmployee(myemp);
     }while(response != 'n');
 };
 
@@ -49,10 +59,24 @@ void modifyEmployeeData(EmployeeList empList){
 };
 
 void deleteEmployees(EmployeeList empList){
+    int id;
+    string fname;
+    string lname;
+    float rate;
+    float hour;
+    int index;
     cout << "Enter the employee's data to delete by the order of id, first Name, last Name, rate, hours:" << endl;
-    // cin take stream result and extract it
-    //search, if exist -> delete
-    //else cout << "No such employee."
+    cin >> id >> fname >> lname >> rate >> hour ;
+    cin.clear();
+    index = empList.searchEmployee(id);
+    if(index != -1){
+        //delete karvanu baki chhe - empList.deleteEmployee ma karvanu....particular object from employee_list Array
+        empList.deleteEmployee(empList.employee_list[index]);
+        cout << "This employee's data is deleted." << endl;
+    }
+    else{
+        cout << "No such employee." << endl;
+    }
 };
 
 void displayEmployeeData(const EmployeeList empList){
@@ -106,7 +130,7 @@ int main(){
         case 5:
             cout << "Thanks for using XXXX Company Payroll System! All employee information can be viewed in the file “employee_list.dat”" << endl;
             outputfile.open("employee_list.dat");
-            //outputfile << displayEmployeeData(empList);
+            //outputfile << displayEmployeeData(empList); // we need to pass displayEmployeeData to fstream
             outputfile.close(); //close output file
             return 0;
         default:

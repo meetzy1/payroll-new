@@ -19,7 +19,7 @@ public:
 
     Employee()
     {
-        cout << "Enter an employee's data by the order of ID number, first name, lastname, rate, hours:" << endl;
+//        cout << "Enter an employee's data by the order of ID number, first name, lastname, rate, hours:" << endl;
 
     }
 
