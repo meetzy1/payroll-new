@@ -79,13 +79,13 @@ public:
 
     // overloading ==
     friend bool operator == (Employee& emp1, Employee& emp2){
-        if emp1.getId() == emp2.getId() return true;
+        if(emp1.getId() == emp2.getId()) return true;
         else return false;
     }
 
     //overloading !=
     friend bool operator !=(Employee& emp1, Employee& emp2){
-        if emp1.getId() == emp2.getId() return true;
+        if(emp1.getId() == emp2.getId()) return true;
         else return false;
     }
 
@@ -96,7 +96,7 @@ public:
 
     //overloading <<
     friend ostream& operator<< (ostream& out, Employee myemp){
-        out << myemp.getId() << myemp.getFirstName() << myemp.getLastName << myemp.getRate() << myemp.getHours() << myemp.computeAndReturnWage() << endl;
+        out << myemp.getId() << myemp.getFirstName() << myemp.getLastName() << myemp.getRate() << myemp.getHours() << myemp.computeAndReturnWage() << endl;
         return out;
     }
 };
