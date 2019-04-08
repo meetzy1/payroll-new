@@ -1,4 +1,6 @@
 #include<iostream>
+#include<iomanip>
+#include <fstream>
 using namespace std;
 #include "Employee.h"
 #include "EmployeeList.h"
@@ -7,13 +9,25 @@ using namespace std;
 //to run g++ -o output main.cpp
 // >./output
 
-void addNewEmployees(EmployeeList&){
+void addNewEmployees(EmployeeList empList){
+    int id;
+    string fname;
+    string lname;
+    float rate;
+    float hour;
     char response;
     do{
         cout << "Enter an employee's data by the order of ID number, first name, last name, rate, hours:" << endl;
-        //take and extract data
-        cout << endl << "Another employee? y/n -->" ;
+        cin >> id >> fname >> lname >> rate >> hour ;
+        cin.clear();
+        while ((id < 0) || (rate<0) || (hour<0))
+        {
+            cout << "You must enter a non negative value. Try again!"<<endl;
+            cin >> id >> rate >> hour;
+        }
+        cout << "Another employee? y/n -->" ;
         cin >> response;
+        cin.clear();
     }while(response != 'n');
 };
 
@@ -34,7 +48,7 @@ void modifyEmployeeData(EmployeeList empList){
 
 };
 
-void deleteEmployees(EmployeeList&){
+void deleteEmployees(EmployeeList empList){
     cout << "Enter the employee's data to delete by the order of id, first Name, last Name, rate, hours:" << endl;
     // cin take stream result and extract it
     //search, if exist -> delete
@@ -44,7 +58,7 @@ void deleteEmployees(EmployeeList&){
 void displayEmployeeData(const EmployeeList empList){
     int count = 0;
     cout << "XXX Company Payroll System" << endl;
-    cout << "ID \t First Name \t Last Name \t Rate \t Hours \t Wage" << endl;
+    cout << "ID" << setw(10) << "First Name" << setw(10) << "Last Name" << setw(10) << "Rate" << setw(10) << "Hours" << setw(10) << "Wage" << endl;
     for (count = 0; count < empList.no_of_employee_objects_in_list; count++){
         cout << empList.employee_list[count];//modify to print proper data
     };
@@ -63,7 +77,8 @@ void printMenu() {
 
 
 int main(){
-    int ch; // for menu choices
+    int ch;
+    ofstream outputfile;
     EmployeeList empList;
     cout << "Create the employee database:" << endl;
 
@@ -77,7 +92,7 @@ int main(){
 
     switch(ch){
         case 1:
-            addNewEmployees(empList); //we have to pass employeelist object
+            addNewEmployees(empList);
             goto main_execution;
         case 2:
             modifyEmployeeData(empList);
@@ -90,7 +105,9 @@ int main(){
             goto main_execution;
         case 5:
             cout << "Thanks for using XXXX Company Payroll System! All employee information can be viewed in the file “employee_list.dat”" << endl;
-            //update employee_list.dat file with empList data
+            outputfile.open("employee_list.dat");
+            //outputfile << displayEmployeeData(empList);
+            outputfile.close(); //close output file
             return 0;
         default:
             cout << "wrong choice!" << endl;
