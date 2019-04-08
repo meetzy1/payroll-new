@@ -8,6 +8,7 @@
 #endif //PAYROLL_NEW_EMPLOYEE_H
 
 #include <iostream>
+using namespace std;
 
 class Employee{
 

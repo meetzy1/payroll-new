@@ -15,7 +15,7 @@ public:
     int count = 0;
     char answer;
 
-    Employee employee_list[];
+    Employee employee_list[10];
     int no_of_employee_objects_in_list = 0;
 
     EmployeeList(){
